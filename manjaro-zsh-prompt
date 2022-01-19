@@ -1,10 +1,3 @@
-# Apply different settigns for different terminals
-case $(basename "$(cat "/proc/$PPID/comm")") in
-  login)
-      source $HOME/manjaro-zsh-config-portable/zsh-maia-prompt
-    	alias x='startx ~/.xinitrc'
-    ;;
-  *)
       if [[ $TERM == "linux" ]]; then
         # TTY does not have powerline fonts
         source $HOME/manjaro-zsh-config-portable/zsh-maia-prompt
@@ -23,5 +16,3 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
         ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
       fi
-    ;;
-esac
